@@ -21,4 +21,13 @@ router.get("/about", function (req, res) {
 router.get("/self", function (req, res) {
     res.render("home/self");
 });
+
+router.get("/signup", function (req, res) {
+    res.render("home/signup");
+});
+
+router.get("/login", function (req, res) {
+    res.render("home/login");
+});
+
 module.exports = router;
