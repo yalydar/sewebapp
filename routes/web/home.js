@@ -1,5 +1,6 @@
 var express = require("express");
 var passport = require("passport");
+var bodyParser = require("body-parser");
 
 var User = require("../../models/user");
 
@@ -40,6 +41,10 @@ router.post("/login", passport.authenticate("login", {
 
 router.get("/signup", function (req, res) {
    res.render("home/signup")
+});
+
+router.post("/submitdiary", function(req, res) {
+   console.log(req.body);
 });
 
 router.post("/signup", function (req, res, next) {
