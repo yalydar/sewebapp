@@ -3,6 +3,7 @@ var passport = require("passport");
 var bodyParser = require("body-parser");
 
 var User = require("../../models/user");
+var Diary = require("../../models/diary");
 
 var router = express.Router();
 
@@ -44,7 +45,18 @@ router.get("/signup", function (req, res) {
 });
 
 router.post("/submitdiary", function(req, res) {
-   console.log(req.body);
+   var entry = req.body.entry;
+   var user = req.user.username;
+   console.log(entry);
+   console.log(user);
+
+   var newEntry = new Diary({
+      user:user,
+      entry,entry
+   });
+   
+   newEntry.save();
+   res.redirect("/self");
 });
 
 router.post("/signup", function (req, res, next) {
