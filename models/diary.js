@@ -1,3 +1,5 @@
+// deprecated
+
 var mongoose = require('mongoose');
  
 var DiarySchema = mongoose.Schema({
